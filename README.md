@@ -1,1 +1,3 @@
-This is a mostly empty repository that already contains all libraries that we use and packages for our opmodes and subsystems.
+This is a mostly empty repository that already contains all libraries that we use and packages for our opmodes and subsystems. 
+
+New repositories should be made from this using the Import Repository tool.
