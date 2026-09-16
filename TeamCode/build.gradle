@@ -1,12 +1,4 @@
-buildscript {
-    repositories {
-        mavenCentral()
-        maven { url "https://repo.dairy.foundation/releases" }
-    }
-    dependencies {
-        classpath "dev.frozenmilk:Load:0.2.4"
-    }
-}
+apply plugin: 'com.android.application'
 
 //
 // build.gradle in TeamCode
@@ -18,15 +10,11 @@ buildscript {
 // please think carefully as to whether such customizations are really necessary
 // before doing so.
 
-
 // Custom definitions may go here
 
 // Include common definitions from above.
 apply from: '../build.common.gradle'
 apply from: '../build.dependencies.gradle'
-
-// Added the Sloth loader plugin here
-apply plugin: 'dev.frozenmilk.sinister.sloth.load'
 
 android {
     namespace = 'org.firstinspires.ftc.teamcode'
@@ -34,66 +22,8 @@ android {
     packagingOptions {
         jniLibs.useLegacyPackaging true
     }
-
-    testOptions {
-        unitTests.all {
-            useJUnitPlatform()
-            include '**/*'
-        }
-    }
-}
-
-
-repositories {
-    maven {
-        url = 'https://maven.brott.dev/'
-    }
-
-    maven {
-        url = 'https://mymaven.bylazar.com/releases'
-    }
-
-    maven {
-        url "https://repo.dairy.foundation/releases"
-    }
-
-    maven {
-        url "https://repo.dairy.foundation/snapshots"
-    }
 }
 
 dependencies {
     implementation project(':FtcRobotController')
-    annotationProcessor files('lib/OpModeAnnotationProcessor.jar')
-
-    // SolversLib: Latest Stable Version
-    implementation "org.solverslib:core:0.3.4" // core
-    implementation "org.solverslib:pedroPathing:0.3.4" // pedroPathing
-    //    implementation "org.solverslib:photon:0.3.4" // photon is optional (see docs for more info)
-
-    // Swapped to Sloth-compatible FTC Dashboard
-    implementation "com.acmerobotics.slothboard:dashboard:0.2.4+0.5.1"
-
-    implementation 'com.skeletonarmyftc.marrow:core:1.1.2'
-
-    // Pedro Pathing
-    implementation 'com.pedropathing:ftc:2.1.2'
-    implementation 'com.pedropathing:telemetry:1.0.0'
-
-    // Swapped to Sloth-compatible Panels Dashboard
-    implementation "com.bylazar.sloth:fullpanels:0.2.4+1.0.12"
-
-    // Ivy
-    implementation 'com.pedropathing:ivy:1.0.0'
-
-    // Added the Sloth Core Runtime
-    implementation("dev.frozenmilk.sinister:Sloth:0.2.4")
-
-    // JUnit 5 Testing Engine and API
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.2'
-    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.10.2'
-    testImplementation 'org.junit.platform:junit-platform-launcher'
-
-    // Optional: For parameterized tests if you want to run the same test with different values
-    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.10.2'
 }
