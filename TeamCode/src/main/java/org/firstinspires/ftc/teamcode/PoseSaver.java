@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
-import com.pedropathing.geometry.Pose;
+
+import com.pedropathing.math.Pose;
 
 public class PoseSaver {
     public static boolean autoWasRun = false;
