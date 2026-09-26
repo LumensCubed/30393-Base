@@ -1,9 +1,9 @@
 package org.firstinspires.ftc.teamcode.opmodes.auto;
 
-import org.firstinspires.ftc.teamcode.opmodes.CommandOpMode;
+import org.firstinspires.ftc.teamcode.opmodes.BaseOpMode;
 import org.firstinspires.ftc.teamcode.robot.Robot;
 
-public class BaseAuto extends CommandOpMode {
+public class BaseAuto extends BaseOpMode {
     protected Robot robot = new Robot();
     protected boolean isRed;
     public BaseAuto(boolean isRed){

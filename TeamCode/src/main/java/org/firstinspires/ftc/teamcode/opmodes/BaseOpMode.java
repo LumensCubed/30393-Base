@@ -6,13 +6,19 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import com.seattlesolvers.solverslib.util.Timing;
 
+import org.firstinspires.ftc.robotcore.external.Telemetry;
+import org.firstinspires.ftc.teamcode.misc.Placeholder;
+import org.firstinspires.ftc.teamcode.misc.PlaceholderReporter;
+
 import java.util.concurrent.TimeUnit;
 
 /**
  * This is the base class that all OpModes we make should extend.
  * It automatically logs loop times and runs the scheduler.
+ * All overridden methods (init(), loop(), etc.) should be put as super.method() at the end in
+ * OpModes that extend this.
  */
-public class CommandOpMode extends OpMode {
+public class BaseOpMode extends OpMode {
     protected double loops = 0;
     protected double secondLoops = 0;
     protected double storedLoops = 0;
@@ -35,6 +41,11 @@ public class CommandOpMode extends OpMode {
     @Override
     public void init() {
         reset();
+        telemetry.setDisplayFormat(Telemetry.DisplayFormat.HTML);
+        telemetry.setNumDecimalPlaces(0, 5);
+        telemetry.setCaptionValueSeparator(": ");
+        PlaceholderReporter.reportPlaceholderFields(telemetry, this);
+        telemetry.update();
     }
 
     /**

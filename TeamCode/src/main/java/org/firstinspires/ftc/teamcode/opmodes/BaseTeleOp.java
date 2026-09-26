@@ -2,7 +2,6 @@ package org.firstinspires.ftc.teamcode.opmodes;
 
 
 import com.pedropathing.api.PoseFactory;
-import com.pedropathing.math.Pose;
 
 import org.firstinspires.ftc.teamcode.PoseSaver;
 import org.firstinspires.ftc.teamcode.robot.Robot;
@@ -11,7 +10,7 @@ import org.firstinspires.ftc.teamcode.robot.Robot;
  *This is our base TeleOp class.
  * Red and Blue TeleOps that extend this should be created and put on the driver station.
  */
-public class BaseTeleOp extends CommandOpMode {
+public class BaseTeleOp extends BaseOpMode {
     protected Robot robot = new Robot();
 
     /**
